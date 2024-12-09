@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_vehicule_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="vehicule">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="vehicule.photo">
+                                        <img t-att-src="image_data_uri(vehicule.photo)" style="max-height: 120pt; max-width: 100%;" alt="Vehicule Photo"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Immatricule:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.immatricule">1234-ABC</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Type:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.type">Voiture</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">État:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.etat">Disponible</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Registration Date:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.acquisition_date">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Model:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.model_id.name">Corolla</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Fuel Type:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.fuel_type">Petrol</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Horsepower:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.horsepower">150</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Car Value:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.car_value">50000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">CO2 Emissions:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.co2">120</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Color:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.color">Red</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Driver:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.driver_employee_name">John Doe</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Responsible User:</th>
+                                            <td style="font-size: 12pt;" t-out="vehicule.activity_user_id.name">Responsible User</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

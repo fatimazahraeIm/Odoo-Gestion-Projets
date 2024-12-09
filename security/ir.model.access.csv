@@ -1,0 +1,13 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_gestionProjets_employee","access.gestionProjets.employee","model_hr_employee","base.group_user",1,1,1,1
+"access_gestionProjets_vehicule","access.gestionProjets.vehicule","model_vehicule","base.group_user",1,1,1,1
+"access_gestionProjets_produit","access.gestionProjets.produit","model_product_product","base.group_user",1,1,1,1
+"access_gestionProjets_projet","access.gestionProjets.projet","model_project_project","base.group_user",1,1,1,1
+"access_gestionProjets_projprod","access.gestionProjets.projprod","model_projprod","base.group_user",1,1,1,1
+"access_gestionProjets_projemp","access.gestionProjets.projemp","model_projemp","base.group_user",1,1,1,1
+"access_gestionProjets_projveh","access.gestionProjets.projveh","model_projveh","base.group_user",1,1,1,1
+"access_gestionProjets_entrepot","access.gestionProjets.entrepot","model_entrepot","base.group_user",1,1,1,1
+"access_gestionProjets_ville","access.gestionProjets.ville","model_ville","base.group_user",1,1,1,1
+"access_gestionProjets_maintenance","access.gestionProjets.maintenance","model_maintenance","base.group_user",1,1,1,1
+"access_gestionProjets_remplacement","access.gestionProjets.remplacement","model_remplacement","base.group_user",1,1,1,1
+

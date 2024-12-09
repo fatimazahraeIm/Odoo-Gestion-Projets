@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_projveh_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="projveh">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="projveh.veh_id.photo">
+                                        <img t-att-src="image_data_uri(projveh.veh_id.photo)" style="max-height: 120pt; max-width: 100%;" alt="Vehicule Photo"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Immatricule:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.veh_id.immatricule">1234-ABC</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Type:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.veh_id.type">Voiture</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">État:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.veh_id.etat">Disponible</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Project Name:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.proj_id.name">Project Name</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Assignment Date:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.date">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">End Date:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.date_fin">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Price:</th>
+                                            <td style="font-size: 12pt;" t-out="projveh.cout">1000</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

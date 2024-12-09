@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_projet_form" model="ir.ui.view">
+            <field name="name">projet.form</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form string="Projet">
+                    <header>
+                        <button name="%(gestionProjets_projet_report)d" string="Print Projet Report" type="action" class="oe_highlight"/>
+                    </header>
+                
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_debut_projet"/>
+                            <field name="date_fin_projet"/>
+                            <field name="budget_projet"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_projet_list" model="ir.ui.view">
+            <field name="name">projet.list</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <list string="Projet">
+                    <field name="name"/>
+                    <field name="date_debut_projet"/>
+                    <field name="date_fin_projet"/>
+                    <field name="budget_projet"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_projet" model="ir.actions.act_window">
+            <field name="name">Projets</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_projet" name="Projets" parent="Mini_Projet_Menu_Root" action="action_projet"/>
+    </data>
+</odoo>

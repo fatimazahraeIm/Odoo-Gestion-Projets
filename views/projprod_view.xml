@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_projprod_form" model="ir.ui.view">
+            <field name="name">projprod.form</field>
+            <field name="model">projprod</field>
+            <field name="arch" type="xml">
+                <form string="Produit du Projet">
+                    <header>
+                        <button name="%(gestionProjets_projprod_report)d" string="Print ProjProd Report" type="action" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="prod_id"/>
+                            <field name="proj_id"/>
+                            <field name="date_achat"/>
+                            <field name="quantite"/>
+                            <field name="prix_unit"/>
+                            <field name="total"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_projprod_list" model="ir.ui.view">
+            <field name="name">projprod.list</field>
+            <field name="model">projprod</field>
+            <field name="arch" type="xml">
+                <list string="Produits du Projet">
+                    <field name="prod_id"/>
+                    <field name="proj_id"/>
+                    <field name="date_achat"/>
+                    <field name="quantite"/>
+                    <field name="prix_unit"/>
+                    <field name="total"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_projprod" model="ir.actions.act_window">
+            <field name="name">Produits du Projet</field>
+            <field name="res_model">projprod</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_projprod" name="Produits du Projet" parent="Mini_Projet_Menu_Root" action="action_projprod"/>
+    </data>
+</odoo>

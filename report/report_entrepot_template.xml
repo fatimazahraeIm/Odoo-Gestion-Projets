@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_entrepot_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="entrepot">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Numéro:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.num">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Ville:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.ville.name">Ville Name</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Adresse:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.adresse">Adresse</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Capacité Maximale:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.capaciteMax">1000</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Capacité Actuelle:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.capaciteActuel">500</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Capacité Restante:</th>
+                                            <td style="font-size: 12pt;" t-out="entrepot.capaciteRest">500</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

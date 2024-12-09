@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_employee_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="employee">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius:8pt; margin:5pt; padding: 2pt;">
+                        <div class="oe_structure"></div>
+                        <table style="width: 100%; border-spacing: 4pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 33%;">
+                                    <table style="width: 100%; text-align: center;" class="table-borderless">
+                                        <t t-if="employee.company_id.logo">
+                                            <tr style="padding-top: 4pt; padding-bottom: 2pt">
+                                                <td>
+                                                    <img t-att-src="image_data_uri(employee.company_id.logo)" style="max-height: 40pt; max-width: 100%;" alt="Company Logo"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                        <tr>
+                                            <td style="padding-top: 2pt; padding-bottom: 4pt;">
+                                                <img t-att-src="image_data_uri(employee.image_1920)" style="max-height: 100pt; max-width: 100%;" alt="Employee Image"/>
+                                            </td> 
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:67%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr><th><span style="font-size: 20pt; font-weight: bold; color: #0066ee;" t-out="employee.name" data-oe-demo="Marc Demo"></span></th></tr>
+                                        <tr><td><strong>CIN:</strong> <span style="font-size: 10pt;" t-out="employee.cin" data-oe-demo="123456789"></span></td></tr>
+                                        <tr><td><strong>First Name:</strong> <span style="font-size: 10pt;" t-out="employee.prenom" data-oe-demo="John"></span></td></tr>
+                                        <tr><td><strong>Birthday:</strong> <span style="font-size: 10pt;" t-out="employee.birthday" data-oe-demo="01/01/1990"></span></td></tr>
+                                        <tr><td><strong>Age:</strong> <span style="font-size: 10pt;" t-out="employee.age" data-oe-demo="34"></span></td></tr>
+                                        <tr><td><strong>Email:</strong> <span style="font-size: 10pt;" t-out="employee.work_email" data-oe-demo="john.doe@example.com"></span></td></tr>
+                                        <tr><td><strong>Phone:</strong> <span style="font-size: 10pt;" t-out="employee.work_phone" data-oe-demo="1234567890"></span></td></tr>
+                                        <tr><td><strong>Driving License Type:</strong> <span style="font-size: 10pt;" t-out="employee.typePermis" data-oe-demo="B License"></span></td></tr>
+                                        <tr><td><strong>Status:</strong> <span style="font-size: 10pt;" t-out="employee.etat" data-oe-demo="Active"></span></td></tr>
+                                        <tr><td><strong>Hire Date:</strong> <span style="font-size: 10pt;" t-out="employee.dateEmbauche" data-oe-demo="01/01/2015"></span></td></tr>
+                                        <tr><td><strong>Seniority:</strong> <span style="font-size: 10pt;" t-out="employee.anciennete" data-oe-demo="9 Years"></span></td></tr>
+                                        <tr><td><strong>Cost Type:</strong> <span style="font-size: 10pt;" t-out="employee.cost_type" data-oe-demo="Salary"></span></td></tr>
+                                        <tr><td><strong>Cost:</strong> <span style="font-size: 10pt;" t-out="employee.cost" data-oe-demo="5000"></span></td></tr>
+                                        <tr t-if="employee.cost_type == 'heure'"><td><strong>Hours Worked per Day:</strong> <span style="font-size: 10pt;" t-out="employee.heures_travail" data-oe-demo="8"></span></td></tr>
+                                        <tr><td><strong>Total Cost:</strong> <span style="font-size: 10pt;" t-out="employee.total_cost" data-oe-demo="800"></span></td></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

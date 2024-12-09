@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_projet_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="projet">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 100%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Nom du Projet:</th>
+                                            <td style="font-size: 12pt;" t-out="projet.name">Nom du Projet</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Début:</th>
+                                            <td style="font-size: 12pt;" t-out="projet.date_debut_projet">01/01/2024</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Fin:</th>
+                                            <td style="font-size: 12pt;" t-out="projet.date_fin_projet">31/12/2024</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Budget:</th>
+                                            <td style="font-size: 12pt;" t-out="projet.budget_projet">100000.00</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

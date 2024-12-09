@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_maintenance_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="maintenance">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="maintenance.photo">
+                                        <img t-att-src="image_data_uri(maintenance.photo)" style="max-height: 120pt; max-width: 100%;" alt="Vehicule Image"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Immatricule:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.immatricule">1234-ABC</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Type de Maintenance:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.maintenance_type">Corrective</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Demande:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.request_date">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Priorité:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.priority">High</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Statut:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.stage_id.name">In Progress</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Description:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.description">Description of the maintenance request</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Nom:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.name">Panne</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Requested By:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.owner_user_id.name">Requested By</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Category:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.category_id.name">Category</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Equipment:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.equipment_id.name">Equipment</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Responsible:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.user_id.name">Responsible</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Scheduled Date:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.schedule_date">Scheduled Date</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Duration:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.duration">Duration</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Company:</th>
+                                            <td style="font-size: 12pt;" t-out="maintenance.company_id.name">Company</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

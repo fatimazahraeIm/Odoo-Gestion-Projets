@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_projemp_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="projemp">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="projemp.emp_id.image_1920">
+                                        <img t-att-src="image_data_uri(projemp.emp_id.image_1920)" style="max-height: 120pt; max-width: 100%;" alt="Employee Photo"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Nom:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.emp_id.name">John Doe</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Poste:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.emp_id.job_id.name">Software Developer</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Projet:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.proj_id.name">Project Name</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date d'affectation:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.date">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Fin:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.date_fin">01/01/2021</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Coût Total:</th>
+                                            <td style="font-size: 12pt;" t-out="projemp.cout_total">1000.00</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>

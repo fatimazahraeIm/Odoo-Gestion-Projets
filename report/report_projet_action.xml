@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="gestionProjets_projet_report" model="ir.actions.report">
+        <field name="name">Projet Report</field>
+        <field name="model">project.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gestionProjets.report_projet_details</field>
+        <field name="report_file">gestionProjets.report_projet_details</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+        <field name="print_report_name">'Projet Report - %s' % (object.name or '').replace('/', '')</field>
+        <field name="binding_model_id" ref="model_project_project"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

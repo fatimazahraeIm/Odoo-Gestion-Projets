@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_remplacement_details">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div class="oe_structure"></div>
+                <t t-foreach="docs" t-as="remplacement">
+                    <div style="display: inline-block; page-break-inside: avoid; width: 100%; border: 1pt solid black; border-radius: 8pt; margin: 10pt; padding: 10pt;">
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="remplacement.vehiculePanne.photo">
+                                        <img t-att-src="image_data_uri(remplacement.vehiculePanne.photo)" style="max-height: 120pt; max-width: 100%;" alt="Vehicule Image"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Référence:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.reference">Reference</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Cas de Sinistre:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.sinistre">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Description:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.description">Description</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Demande:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.dateDemande">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Date de Livraison:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.dateLivraison">01/01/2020</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-size: 14pt;">Véhicule à Remplacer:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.vehiculePanne.license_plate">1234-ABC</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table style="width: 100%; border-spacing: 6pt; border-collapse: separate;" class="table-borderless">
+                            <tr>
+                                <td style="width: 35%; padding-right: 10pt; vertical-align: top; text-align: center;">
+                                    <t t-if="remplacement.vehiculeNew.photo">
+                                        <img t-att-src="image_data_uri(remplacement.vehiculeNew.photo)" style="max-height: 120pt; max-width: 100%;" alt="Vehicule Image"/>
+                                    </t>
+                                </td>
+                                <td style="width: 65%; vertical-align: top;">
+                                    <table style="width: 100%; text-align: left;" class="table-borderless">
+                                        <tr>
+                                            <th style="font-size: 14pt;">Nouveau Véhicule:</th>
+                                            <td style="font-size: 12pt;" t-out="remplacement.vehiculeNew.license_plate">5678-DEF</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="oe_structure"></div>
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+            </div>
+        </t>
+    </template>
+</odoo>
